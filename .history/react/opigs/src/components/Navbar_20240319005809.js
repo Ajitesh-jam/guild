@@ -17,9 +17,9 @@ function CustomNavbar() {
         </Container>
       </Navbar>
     </Container>
-    <Navbar expand="lg" className="bg-body-tertiary" style={{height:'100px',fontSize:'30px'}}>
+    <Navbar expand="lg" className="bg-body-tertiary" style={{height:'600px'}}>
       <Container fluid>
-        <Navbar.Brand href="#" style={{padding: '2px 60px'}}>CAREER ADVISING AND <br></br>PROFESSIONAL DEVELOPMENT </Navbar.Brand>
+        <Navbar.Brand href="#">ONLINE PLACEMENT</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -27,10 +27,9 @@ function CustomNavbar() {
             
             navbarScroll
           >
-            <Nav.Link href="#action1" style={{padding: '2px 30px'}}>STUDENTS</Nav.Link>
-            <Nav.Link href="#action2"style={{padding: '2px 30px'}}>RECRUITERS</Nav.Link>
-            <Nav.Link href="#action2"style={{padding: '2px 30px'}}>ALUMNI</Nav.Link>            
-            <NavDropdown title="COORDINATOR" id="navbarScrollingDropdown"style={{padding: '2px 60px'}}>
+            <Nav.Link href="#action1">STUDENTS</Nav.Link>
+            <Nav.Link href="#action2">RECRUITERS</Nav.Link>
+            <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
@@ -40,7 +39,9 @@ function CustomNavbar() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
- 
+            <Nav.Link href="#" disabled>
+              Link
+            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control

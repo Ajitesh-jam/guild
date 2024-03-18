@@ -1,7 +1,7 @@
 import './App.css';
 import CustomNavbar from './components/Navbar';
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import Placeholder from './components/PlaceHolders';
+import Placeholder from './components/PlaceHolders';
 function App() {
   return (
     <>
@@ -13,7 +13,7 @@ function App() {
          <div className="background-image">
               
 
-      {/* {  <Placeholder/> } */}
+      {  <Placeholder/> }
       
     </div>
 
