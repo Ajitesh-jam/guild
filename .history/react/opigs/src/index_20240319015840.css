@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Wellfleet&display=swap');
 
+*{
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+
+}
 
 body {
   margin: 0;
   font-family: "Wellfleet", monospace;
   font-weight: 400;
   font-style: normal;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   
+  display: flex;
+  justify-content: center;
 }
 
 code {
@@ -25,18 +31,3 @@ code {
   font-weight: 300;
   font-style: normal;
 }
-.background-image {
-  /* Add styles for your background image container */
-  /* Example:
-  background-image: url('your-background-image.jpg');
-  background-size: cover;
-  background-position: center;
-  */
-  
-  /* Center the child element using Flexbox */
-  display: flex;
-  justify-content: center; /* Horizontally center */
-  align-items: center; /* Vertically center */
-  height: 100vh; /* Adjust this value according to your design */
-}
-

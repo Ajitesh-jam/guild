@@ -1,0 +1,61 @@
+.wrapper {
+    width: 500px;
+    background-color:rgb(14, 80, 173);
+
+}
+.wrapper h1{
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+
+}
+.wrapper form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper input-box{
+    position: relative;
+    width: 70%;
+    margin-bottom: 20px;
+    background:rgb(28, 28, 181);
+    margin: auto; 
+}
+
+.wrapper input{
+    width: 90%;
+    padding: 10px;
+    background: transparent;
+    border: '1px solid';
+    outline:none;
+    border-radius: 20px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #bd12a6;
+}
+.wrapper input::placeholder{
+    color: #dee5e9;
+  
+}
+.wrapper .input-box icon{
+    position: absolute;
+    top: 70%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #bd12a6;
+}
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: -15px 0px 15px;
+    margin-bottom: 20px;
+}
+
+
+
+

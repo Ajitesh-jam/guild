@@ -1,0 +1,13 @@
+.wrapper {
+    width: 400px;
+    background-color:red;
+
+}
+.wrapper h1{
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+
+}

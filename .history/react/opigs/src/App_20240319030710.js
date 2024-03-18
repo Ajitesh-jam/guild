@@ -13,7 +13,6 @@ function App() {
   
       </div>
          <div className="background-image">
-      <LoginForm/>
       {/* { {  <Placeholder/> } } */}
     </div>
 

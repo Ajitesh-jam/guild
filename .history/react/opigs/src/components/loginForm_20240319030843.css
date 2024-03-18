@@ -1,0 +1,100 @@
+.wrapper {
+    width: 500px;
+    background-color:transparent;
+    border-radius:40px;
+    padding: 10px 10px 0px;
+
+
+    border:2px solid #000;
+    backdrop-filter: blur(4px);
+}
+.wrapper h1{
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color:black;
+    text-align: center;
+
+}
+.wrapper form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper input-box{
+    position: relative;
+    width: 70%;
+    margin-bottom: 20px;
+    background:rgb(28, 28, 181);
+    margin: auto; 
+}
+
+.wrapper input{
+    width: 90%;
+    padding: 10px;
+    background: transparent;
+    border: '1px solid';
+    outline:none;
+    border-radius: 20px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #bd12a6;
+}
+.wrapper input::placeholder{
+    color: #11699d;
+  
+}
+.wrapper .input-box icon{
+    position: absolute;
+    top: 70%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #bd12a6;
+}
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    /* margin: -15px 0px 15px; */
+    margin-bottom: 20px;
+}
+
+.remember-forgot label input{
+    margin-right: 5px;
+    accent-color: white;
+
+}
+.remember-forgot a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all ease-in-out; 
+  }
+  
+  .remember-forgot a:hover {
+    text-decoration: underline; 
+}
+.wrapper button {
+    width:60%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+
+
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all ease-in-out
+
+
+}
+.wrapper .signup{
+    margin-top: 20px;
+    color: #0f0b0b;
+    font-size:large;
+    text-decoration: none;
+    transition: all ease-in-out;
+
+}
+  
+

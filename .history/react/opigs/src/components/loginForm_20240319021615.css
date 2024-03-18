@@ -1,0 +1,43 @@
+.wrapper {
+    width: 400px;
+    background-color:red;
+
+}
+.wrapper h1{
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+
+}
+.wrapper form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper input-box{
+    position: relative;
+    width: 50%;
+    margin-bottom: 20px;
+    background:rgb(28, 28, 181);
+    margin: auto; 
+}
+
+.wrapper input{
+    width: 80%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: 10px;
+    border-radius: 20px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+
+
+

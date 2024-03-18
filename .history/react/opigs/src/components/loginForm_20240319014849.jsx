@@ -1,0 +1,27 @@
+
+import './loginForm.css';
+
+function LoginForm(){
+    return(
+        <div className='wrapper'>
+            <form action=''>
+                <h1>Login</h1>
+                <div className="inputbox">
+                    <input type="text" placeholder='UserName' required></input>
+                </div>
+                <div className="inputbox">
+                    <input type="text" placeholder='Password' required></input>
+                </div>   
+                <div className="remember-forgot">
+                    <label>
+                        <input type="checkbox" name="remember" id="remember"/>Remember me
+                    </label>
+                    <a href='#'>Forgot Password?</a>
+                </div>   
+                <button type="submit" className="btn btn-">Submit</button>          
+            </form>
+           
+        </div>
+    )
+}
+export default LoginForm;

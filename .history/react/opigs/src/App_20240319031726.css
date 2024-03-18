@@ -28,7 +28,7 @@
   color: #61dafb;
 }
 .background-image {
-  background-image: url('./components/Images/login2.jpeg'); /* Adjust the path to your image file */
+  background-image: url('./components/Images/login.jpeg'); /* Adjust the path to your image file */
   background-size: cover;
   background-position: center;
   height: 100vh; /* Adjust the height as needed */
