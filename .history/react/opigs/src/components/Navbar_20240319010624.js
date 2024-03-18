@@ -29,7 +29,6 @@ function CustomNavbar() {
           >
             <Nav.Link href="#action1" style={{padding: '2px 30px'}}>STUDENTS</Nav.Link>
             <Nav.Link href="#action2"style={{padding: '2px 30px'}}>RECRUITERS</Nav.Link>
-            <Nav.Link href="#action2"style={{padding: '2px 30px'}}>ALUMNI</Nav.Link>            
             <NavDropdown title="COORDINATOR" id="navbarScrollingDropdown"style={{padding: '2px 60px'}}>
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -40,7 +39,9 @@ function CustomNavbar() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
- 
+            <Nav.Link href="#" disabled style={{padding: '2px 60px'}}>
+              ALUMNI
+            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control

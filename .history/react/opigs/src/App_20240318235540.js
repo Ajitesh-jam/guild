@@ -1,23 +1,17 @@
 import './App.css';
 import CustomNavbar from './components/Navbar';
+import Authentication from './components/Authentication';
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import Placeholder from './components/PlaceHolders';
+import placeholder from './components/PlaceHolders';
+
 function App() {
   return (
     <>
-
       <CustomNavbar />
-      <div>
-  
-      </div>
-         <div className="background-image">
-              
-
-      {/* {  <Placeholder/> } */}
-      
-    </div>
+      <placeholder/>
 
     </>
   );
 }
+
 export default App;
