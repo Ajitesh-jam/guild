@@ -29,7 +29,7 @@ function App() {
         <Route path='/login' element={<LoginForm />} />
         <Route path='/Place' element={<Placeholder />} />
         <Route path='/Dashboard' element={<AppDash />} />
-        <Route path='Companies' element={<FlipCard />} />
+        <Route path='*' element={<FlipCard />} />
       </Routes>
     </BrowserRouter>
 

@@ -67,8 +67,14 @@ li a {
   color: rgb(85, 83, 83);
 }
 
+.flipcard-container {
+    display: flex; /* Use flexbox */
+    justify-content: space-around; /* Horizontally distribute items with equal space */
+    align-items: center; /* Align items vertically in the center */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if there's not enough space */
+  }
 
-
+.nav-item {}
 
 nav i {
   width: 50px;

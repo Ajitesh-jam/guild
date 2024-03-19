@@ -1,0 +1,42 @@
+/* Navbar Container */
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+.bg-body-tertiary {
+    background-color: #f8f9fa; /* Adjust the color as needed */
+    width:100%; /* Adjust the width as needed */
+  }  
+  /* Navbar Brand */
+  .navbar-brand {
+    font-size: 40px;
+  }
+  
+  /* Navbar Links */
+  .nav-link {
+    padding: 2px 30px;
+  }
+  
+  /* Navbar Toggle Button */
+  .navbar-toggler {
+    padding: 0 10px;
+  }
+  
+  /* Form Search */
+  .form-control {
+    margin-right: 10px;
+  }
+  
+  /* Adjust Navbar Height */
+  .navbar {
+    height: 100px !important;
+  }
+  
+  /* Adjust Navbar Background */
+  .bg-body-tertiary {
+    background-color: #f8f9fa; /* Adjust the color as needed */
+  }
+  

@@ -28,7 +28,7 @@
   color: #61dafb;
 }
 .background-image {
-  background-image: url('./components/Images/kgp.png'); /* Adjust the path to your image file */
+  background-image: url('./components/Images/kgp.png'); 
   background-size: cover;
   background-position: center;
   height: 100vh; /* Adjust the height as needed */

@@ -35,7 +35,7 @@ function FlipCard() {
             <div className="profile-image">
               <img src={img} alt="Profile Image" />
               <h2>Code Info</h2>
-              <p>Web Developer | Video editor</p>
+              <p>Web Developer ||Video editor</p>
               <ul>
                 <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
                 <li><a href="#"><i className="fab fa-instagram"></i></a></li>

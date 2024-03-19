@@ -8,7 +8,16 @@ import logoKgp from './Images/logo.png';
 function CustomNavbar() {
   return (
     <>
-      
+        <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />}>
+         
+          <Route path="login" element={<LoginForm />} />
+          <Route path="Place" element={<Placeholder />} />
+          <Route path="Dashboard" element={<AppDash />} /> 
+          <Route path="*" element={<FlipCard />} /> 
+        </Route>
+
     <image src={logoKgp}></image>
         <Container>
             
@@ -28,9 +37,9 @@ function CustomNavbar() {
             
             navbarScroll
           >
-            <Nav.Link href="/Dashboard" style={{padding: '2px 30px'}}>STUDENTS</Nav.Link>
-            <Nav.Link href="/Companies"style={{padding: '2px 30px'}}>RECRUITERS</Nav.Link>
-            <Nav.Link href="/login"style={{padding: '2px 30px'}}>ALUMNI</Nav.Link>            
+            <Nav.Link href="#action1" style={{padding: '2px 30px'}}>STUDENTS</Nav.Link>
+            <Nav.Link href="#action2"style={{padding: '2px 30px'}}>RECRUITERS</Nav.Link>
+            <Nav.Link href="#action2"style={{padding: '2px 30px'}}>ALUMNI</Nav.Link>            
             <NavDropdown title="COORDINATOR" id="navbarScrollingDropdown"style={{padding: '2px 60px'}}>
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -55,7 +64,8 @@ function CustomNavbar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
+    </Routes>
+    </BrowserRouter>
     </>
   );
 }
