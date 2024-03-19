@@ -18,7 +18,7 @@ function App() {
       {{<Placeholder/>}}
     </div> */}
 
-    <AppDash/>
+
     </>
   );
 }
