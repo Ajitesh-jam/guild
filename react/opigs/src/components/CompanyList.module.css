@@ -1,0 +1,36 @@
+/* CompanyList.module.css */
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.companyList {
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.companyContainer {
+  margin-bottom: 20px; /* Adjust margin between containers */
+}
+
+.companyItem {
+  display: flex;
+  align-items: center;
+}
+
+.companyItem img {
+  width: 150px; /* Adjust image width as needed */
+  height: auto;
+  margin-right: 20px; /* Adjust margin between image and description */
+}
+
+.description {
+  flex: 1;
+}
+
+.description h2 {
+  margin-top: 0;
+}
+
+.description p {
+  margin-bottom: 0;
+}
