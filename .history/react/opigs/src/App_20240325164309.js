@@ -9,39 +9,29 @@ import FlipCard from "./components/FlipBoard";
 import Form1 from "./components/SignUp";
 import CompanyList from "./components/CompanyList";
 
-// const express = require("express");
-// const mongoose = require("mongoose");
-// const app = express();
+const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
 // const User = require("./components/model/userModel");
 
-// // Middleware for parsing JSON bodies
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-// // MongoDB Connection
-// mongoose
-//   .connect(
-//     "mongodb+srv://Ajitesh:Ajitesh9877@cluster0.yz6u5fv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-//   )
-//   .then(() => {
-//     console.log("MongoDB Connected");
-//   })
-//   .catch((err) => {
-//     console.error("MongoDB Connection Error:", err);
-//   });
+// Middleware for parsing JSON bodies
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+// MongoDB Connection
+mongoose
+  .connect(
+    "mongodb+srv://Ajitesh:Ajitesh9877@cluster0.yz6u5fv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+  )
+  .then(() => {
+    console.log("MongoDB Connected");
+  })
+  .catch((err) => {
+    console.error("MongoDB Connection Error:", err);
+  });
 
-// app.post("/UserSignUp", async (req, res) => {
-//   const [Name, Password] = req.body;
-//   try {
-//     const newUser = await User.create({ Name, Password });
-//     await newUser.save();
-//     res.status(201).json(newUser);
-//     res.send({ status: "OK" });
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ message: "Server Error" });
-//   }
-// });
-
+app.post("/UserSignUp", async (req, res) => {
+  const [Name, Password] = req.body;
+});
 function App() {
   return (
     <>

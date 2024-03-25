@@ -193,9 +193,8 @@ app.post("/users/login", async (req, res) => {
     return res.status(404).json({ message: "User not found" });
   }
   console.log(user.Password, Password);
-  // const isPasswordCorrect = await user.comparePassword(Password);
-
-  if (user.Password === Password) {
+  const isPasswordCorrect = await user.comparePassword(Password);
+  if (isPasswordCorrect) {
     // Passwords match
     return res.status(200).json({ status: "correct Password" });
   } else {

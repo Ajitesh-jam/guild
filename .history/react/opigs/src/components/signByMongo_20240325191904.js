@@ -186,20 +186,14 @@ app.delete("/users/:id", async (req, res) => {
   }
 });
 
-app.post("/users/login", async (req, res) => {
+app.post("/user/login", async (req, res) => {
   const { Name, Password } = req.body;
   const user = await User.findOne({ Name });
   if (!user) {
     return res.status(404).json({ message: "User not found" });
   }
-  console.log(user.Password, Password);
-  // const isPasswordCorrect = await user.comparePassword(Password);
-
-  if (user.Password === Password) {
-    // Passwords match
+  if (Password.compare(user.Password)) {
+    // const token = jwt.sign({Name: user.Name},"secret");
     return res.status(200).json({ status: "correct Password" });
-  } else {
-    // Passwords do not match
-    return res.status(400).json({ status: "incorrect Password" });
-  }
+  } else return res.status(400).json({ status: "incorrect Password" });
 });

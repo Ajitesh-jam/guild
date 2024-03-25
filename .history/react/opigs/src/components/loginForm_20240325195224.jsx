@@ -90,9 +90,9 @@ function LoginForm() {
     async function submit(e) {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/users/login', {
+            const response = await axios.post("http://localhost:5000/users/login", {
                 Name: Name,
-                Password: password
+                Password: password,
             });
             console.log(response.data); // Log response data
         } catch (error) {

@@ -5,4 +5,4 @@ npm install axios,cors ,express,mongoose,nodemon
 brew tap mongodb/brew
 <mongodb server run>
 npm install mongoose
-npm install express http cors http jsonwebtoken bcrypt
+npm install express http cors http jsonwebtoken

@@ -69,13 +69,9 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
-
-const jwt = require("jsonwebtoken");
 const app = express();
 const http = require("http"); // Require http module for creating server
 const User = require("./model/userModel");
-
-const bcrypt = require("bcrypt");
 
 const cors = require("cors");
 app.use(cors());
@@ -120,9 +116,6 @@ async function insert() {
 // Define routes
 app.post("/users/signUp", async (req, res) => {
   try {
-    // const {Name,Password}=req.body;
-    // const encryptedPassword=await bcrypt.hash(password,10);
-
     const newUser = await User.create(req.body);
     await newUser.save();
     res.status(201).json(newUser);
@@ -183,23 +176,5 @@ app.delete("/users/:id", async (req, res) => {
       : res.status(200).json(user);
   } catch (e) {
     res.status(500).json({ message: e.message });
-  }
-});
-
-app.post("/users/login", async (req, res) => {
-  const { Name, Password } = req.body;
-  const user = await User.findOne({ Name });
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
-  }
-  console.log(user.Password, Password);
-  // const isPasswordCorrect = await user.comparePassword(Password);
-
-  if (user.Password === Password) {
-    // Passwords match
-    return res.status(200).json({ status: "correct Password" });
-  } else {
-    // Passwords do not match
-    return res.status(400).json({ status: "incorrect Password" });
   }
 });

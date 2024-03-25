@@ -5,43 +5,27 @@
 // import { Link} from "react-router-dom";
 // import React, { useState } from 'react';
 // import axios from "axios";
+// import { Authenticate } from './signByMongo';
 
-
+// import router from './routes/user.route';
 
 // function LoginForm(){
-//     const [Name, setName] = useState('');
+//     const [email, setEmail] = useState('');
 //     const [password, setPassword] = useState('');
   
-
-//     async function submit(e) {
-//       e.preventDefault();
+//     async function submit() {
+//     //   email.preventDefault();
 //     //   try {
 //     //     await axios.post("http://localhost:3000/signUp", {
-//     //       Name: Name,
+//     //       email: email,
 //     //       password: password,
 //     //     });
 //     //   } catch (e) {
 //     //     console.log("Error", e.message);
 //     //   }
+//     Authenticate()
 
-//       try {
-//         const response = await axios.post("http://localhost:5000/users/login", {
-//           Name: Name,
-//           Password: password,
-//         });
-//         console.log(response.data); // Log response data
-//       } catch (error) {
-//         console.error("Error", error.message);
-//       }
 //     }
-
-//     // constructor(props){
-//     //     super(props)
-//     //     this.state = {
-//     //         Name: '',
-//     //         password: ''
-//     //     }
-//     // }
 //     return(
 //         <div className='wrapper'>
 //             <form action=''>
@@ -49,11 +33,11 @@
                 
 //                 <div className="input-box">
                     
-//                     <input type="text" placeholder='UserName' onChange={(e)=>setName(e.target.value)} required></input>
+//                     <input type="text" placeholder='UserName' required></input>
 //                     <FaUserGraduate className='icon'/>
 //                 </div>
 //                 <div className="input-box">
-//                     <input type="text" placeholder='Password' onChange={(e)=>setPassword(e.target.value)} required></input>
+//                     <input type="text" placeholder='Password' required></input>
 //                     <RiLockPasswordLine className='icon'/>
 //                 </div>   
 //                 <div className="remember-forgot">
@@ -62,13 +46,13 @@
 //                         </label>
 //                     <a href='#'>Forgot Password?</a>
 //                 </div>   
-//                 <button type="submit" onClick={submit}>Sign IN</button>   
+//                 <button type="submit" >Login</button>   
 //                 <div className="signup">
 //                     <p>Don't have an account? <a href='/signUp'>Sign Up</a></p>
                     
 //                 </div> 
 //             </form>
-//             <Link to='/signUp'>Sign IN</Link>
+//             <button className='submit' onClick={submit}>Login</button>
            
 //         </div>
 //     )
@@ -76,54 +60,49 @@
 // export default LoginForm;
 
 
-import './loginForm.css';
+import { useState } from 'react';
 import { FaUserGraduate } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
-import React, { useState } from 'react';
-import axios from "axios";
+import { Authenticate } from './signByMongo'; // Assuming your authentication file is named 'yourAuthFile.js'
 
 function LoginForm() {
-    const [Name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    async function submit(e) {
-        e.preventDefault();
+  
+    async function submit() {
         try {
-            const response = await axios.post('http://localhost:5000/users/login', {
-                Name: Name,
-                Password: password
-            });
-            console.log(response.data); // Log response data
-        } catch (error) {
-            console.error("Error", error.message);
+            await Authenticate(email, password); // Pass email and password to Authenticate function
+        } catch (e) {
+            console.log("Error", e.message);
         }
     }
 
-    return (
+    return(
         <div className='wrapper'>
             <form action=''>
                 <h1>Login</h1>
+                
                 <div className="input-box">
-                    <input type="text" placeholder='UserName' onChange={(e) => setName(e.target.value)} required></input>
-                    <FaUserGraduate className='icon' />
+                    <input type="text" placeholder='UserName' value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <FaUserGraduate className='icon'/>
                 </div>
                 <div className="input-box">
-                    <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} required></input>
-                    <RiLockPasswordLine className='icon' />
-                </div>
+                    <input type="text" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required />
+                    <RiLockPasswordLine className='icon'/>
+                </div>   
                 <div className="remember-forgot">
                     <label>
-                        <input type="checkbox" className='remember' /> Remember me
+                        <input type="checkbox" className='remember'/> Remember me
                     </label>
                     <a href='#'>Forgot Password?</a>
-                </div>
-                <button type="submit" onClick={submit}>Sign IN</button>
+                </div>   
+                <button type="button" onClick={submit}>Login</button>   
                 <div className="signup">
-                    <p>Don't have an account? <Link to='/signUp'>Sign Up</Link></p>
-                </div>
+                    <p>Don't have an account? <a href='/signUp'>Sign Up</a></p>
+                </div> 
             </form>
         </div>
     )
 }
+
 export default LoginForm;

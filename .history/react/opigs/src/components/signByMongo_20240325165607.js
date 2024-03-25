@@ -69,20 +69,14 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
-
-const jwt = require("jsonwebtoken");
 const app = express();
 const http = require("http"); // Require http module for creating server
 const User = require("./model/userModel");
 
-const bcrypt = require("bcrypt");
-
-const cors = require("cors");
-app.use(cors());
-// const userRouter = require("./routes/user.route.js");
+const userRouter = require("./routes/user.route.js");
 
 //route
-//app.use("/users", userRouter);
+app.use("/users", userRouter);
 
 // Middleware for parsing JSON bodies
 app.use(express.json());
@@ -118,88 +112,67 @@ async function insert() {
   });
 }
 // Define routes
-app.post("/users/signUp", async (req, res) => {
-  try {
-    // const {Name,Password}=req.body;
-    // const encryptedPassword=await bcrypt.hash(password,10);
+// app.post("/signUp", async (req, res) => {
+//   try {
+//     const newUser = await User.create(req.body);
+//     await newUser.save();
+//     res.status(201).json(newUser);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ message: "Server Error" });
+//   }
+// });
 
-    const newUser = await User.create(req.body);
-    await newUser.save();
-    res.status(201).json(newUser);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Server Error" });
-  }
-});
+// app.get("/users", async (req, res) => {
+//   try {
+//     const users = await User.find();
+//     res.json(users);
 
-app.get("/users", async (req, res) => {
-  try {
-    const users = await User.find();
-    res.json(users);
+//     users.map((user) => {
+//       if (user.Name === "Ajitesh2") console.log(user.Password);
+//     });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(400).json({ message: "Server Error" });
+//   }
+// });
+// app.get("/users/:id", async (req, res) => {
+//   try {
+//     const user = await User.findById(req.params.id);
+//     if (!user) {
+//       return res.status(404).json({ message: "User not found" });
+//     }
+//     res.send(user);
 
-    users.map((user) => {
-      if (user.Name === "Ajitesh2") console.log(user.Password);
-    });
-  } catch (err) {
-    console.error(err);
-    res.status(400).json({ message: "Server Error" });
-  }
-});
-app.get("/users/:id", async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id);
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
-    res.send(user);
+//     // const { id } = req.params;
+//     // await User.findById(id);
+//     // res.send(user);
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json({ message: err.message });
+//   }
+// });
 
-    // const { id } = req.params;
-    // await User.findById(id);
-    // res.send(user);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ message: err.message });
-  }
-});
+// app.put("/users/:id", async (req, res) => {
+//   try {
+//     const user = await User.findByIdAndUpdate(req.params.id, req.body);
+//     !user
+//       ? res.status(404).json({ message: "User not found" })
+//       : res.status(200).json(user);
 
-app.put("/users/:id", async (req, res) => {
-  try {
-    const user = await User.findByIdAndUpdate(req.params.id, req.body);
-    !user
-      ? res.status(404).json({ message: "User not found" })
-      : res.status(200).json(user);
-
-    const updatedUser = await User.findById(user.id);
-    res.send(updatedUser);
-  } catch (e) {
-    res.status(500).json({ message: e.message });
-  }
-});
-app.delete("/users/:id", async (req, res) => {
-  try {
-    const user = await User.findByIdAndDelete(req.params.id);
-    !user
-      ? res.status(404).json({ message: "User not found" })
-      : res.status(200).json(user);
-  } catch (e) {
-    res.status(500).json({ message: e.message });
-  }
-});
-
-app.post("/users/login", async (req, res) => {
-  const { Name, Password } = req.body;
-  const user = await User.findOne({ Name });
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
-  }
-  console.log(user.Password, Password);
-  // const isPasswordCorrect = await user.comparePassword(Password);
-
-  if (user.Password === Password) {
-    // Passwords match
-    return res.status(200).json({ status: "correct Password" });
-  } else {
-    // Passwords do not match
-    return res.status(400).json({ status: "incorrect Password" });
-  }
-});
+//     const updatedUser = await User.findById(user.id);
+//     res.send(updatedUser);
+//   } catch (e) {
+//     res.status(500).json({ message: e.message });
+//   }
+// });
+// app.delete("/users/:id", async (req, res) => {
+//   try {
+//     const user = await User.findByIdAndDelete(req.params.id);
+//     !user
+//       ? res.status(404).json({ message: "User not found" })
+//       : res.status(200).json(user);
+//   } catch (e) {
+//     res.status(500).json({ message: e.message });
+//   }
+// });
