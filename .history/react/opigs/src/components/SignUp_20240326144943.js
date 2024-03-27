@@ -86,7 +86,6 @@ function Form1() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [roll, setRoll] = useState("");
 
   async function submit(event) {
     event.preventDefault(); // Prevent form submission
@@ -94,9 +93,8 @@ function Form1() {
     try {
       const response = await axios.post("http://localhost:5000/users/signUp", {
         Name: name,
-        Email: email,
+        EmailId: email,
         Password: password,
-        Roll: roll,
       });
       console.log(response.data); // Log response data
     } catch (error) {
@@ -127,21 +125,13 @@ function Form1() {
               onChange={(e) => setPassword(e.target.value)} // Update password state onChange
             />
           </Form.Group>
-          <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Roll</Form.Label>
-            <Form.Control
-              type="roll"
-              placeholder="Roll"
-              value={roll} // Bind value to password state
-              onChange={(e) => setRoll(e.target.value)} // Update password state onChange
-            />
-          </Form.Group>
         </Row>
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="name"
-            placeholder="Enter Name"
+            placeholder="Enter email"
+            value={email} // Bind value to email state
             onChange={(e) => setName(e.target.value)} // Update email state onChange
           />
         </Form.Group>

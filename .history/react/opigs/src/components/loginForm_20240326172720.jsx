@@ -86,8 +86,6 @@ import axios from "axios";
 function LoginForm() {
     const [Name, setName] = useState('');
     const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
-
 
     // async function submit(e) {
     //     e.preventDefault();
@@ -119,37 +117,19 @@ function LoginForm() {
             console.error("Error", error.message);
         }
     }
-    function toggleShowPassword() {
-        setShowPassword(!showPassword);
-    }
-
-
+    
     return (
-        <div className='wrapper'style={{display:"flex", left:"50%"}}> 
-            <form>
+        <div className='wrapper'>
+            <form action=''>
                 <h1>Login</h1>
                 <div className="input-box">
-                    <input
-                        type={showPassword ? 'text' : 'password'}
-                        placeholder='UserName'
-                        onChange={(e) => setName(e.target.value)}
-                        required
-                    />
+                    <input type="text" placeholder='UserName' onChange={(e) => setName(e.target.value)} required></input>
                     <FaUserGraduate className='icon' />
                 </div>
                 <div className="input-box">
-                    <input
-                        type={showPassword ? 'text' : 'password'}
-                        placeholder='Password'
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                    
+                    <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} required></input>
+                    <RiLockPasswordLine className='icon' />
                 </div>
-                <RiLockPasswordLine className='icon' />
-                    <button type="button" className="show-password" onClick={toggleShowPassword}>
-                        {showPassword ? 'Hide' : 'Show'} Password
-                    </button>
                 <div className="remember-forgot">
                     <label>
                         <input type="checkbox" className='remember' /> Remember me
@@ -161,7 +141,6 @@ function LoginForm() {
                     <p>Don't have an account? <Link to='/signUp'>Sign Up</Link></p>
                 </div>
             </form>
-
         </div>
     )
 }

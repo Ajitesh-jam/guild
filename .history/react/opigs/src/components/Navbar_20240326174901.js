@@ -43,7 +43,7 @@ function CustomNavbar() {
             <Nav.Link href="/login" style={{ padding: "2px 30px" }}>
               STUDENTS
             </Nav.Link>
-            <Nav.Link href="/login" style={{ padding: "2px 30px" }}>
+            <Nav.Link href="/Companies" style={{ padding: "2px 30px" }}>
               RECRUITERS
             </Nav.Link>
             <Nav.Link href="/login" style={{ padding: "2px 30px" }}>

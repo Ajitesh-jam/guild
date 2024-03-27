@@ -125,7 +125,7 @@ function LoginForm() {
 
 
     return (
-        <div className='wrapper'style={{display:"flex", left:"50%"}}> 
+        <div className='wrapper'style={{display:"flex", flexDirection:"row"}}> 
             <form>
                 <h1>Login</h1>
                 <div className="input-box">

@@ -16,12 +16,7 @@ function CustomNavbar() {
         <div style={{ padding: "10px" }}>
           <img
             src={logoKgp}
-            style={{
-              height: "80%",
-              width: "80%",
-              marginTop: "30%",
-              marginBottom: "30%",
-            }}
+            style={{ height: "20%", width: "60%", marginTop: "30%" }}
           ></img>
         </div>
         <Navbar.Brand href="/" style={{ fontSize: "40px" }}>
@@ -43,7 +38,7 @@ function CustomNavbar() {
             <Nav.Link href="/login" style={{ padding: "2px 30px" }}>
               STUDENTS
             </Nav.Link>
-            <Nav.Link href="/login" style={{ padding: "2px 30px" }}>
+            <Nav.Link href="/Companies" style={{ padding: "2px 30px" }}>
               RECRUITERS
             </Nav.Link>
             <Nav.Link href="/login" style={{ padding: "2px 30px" }}>

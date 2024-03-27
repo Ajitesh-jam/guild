@@ -125,13 +125,14 @@ function LoginForm() {
 
 
     return (
-        <div className='wrapper'style={{display:"flex", left:"50%"}}> 
+        <div className='wrapper'>
             <form>
                 <h1>Login</h1>
                 <div className="input-box">
                     <input
                         type={showPassword ? 'text' : 'password'}
                         placeholder='UserName'
+                        value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
                     />
@@ -141,15 +142,15 @@ function LoginForm() {
                     <input
                         type={showPassword ? 'text' : 'password'}
                         placeholder='Password'
+                        value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    
-                </div>
-                <RiLockPasswordLine className='icon' />
+                    <RiLockPasswordLine className='icon' />
                     <button type="button" className="show-password" onClick={toggleShowPassword}>
                         {showPassword ? 'Hide' : 'Show'} Password
                     </button>
+                </div>
                 <div className="remember-forgot">
                     <label>
                         <input type="checkbox" className='remember' /> Remember me

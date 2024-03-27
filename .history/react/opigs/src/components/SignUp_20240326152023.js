@@ -128,7 +128,7 @@ function Form1() {
             />
           </Form.Group>
           <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Roll</Form.Label>
+            <Form.Label>Password</Form.Label>
             <Form.Control
               type="roll"
               placeholder="Roll"

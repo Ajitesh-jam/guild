@@ -14,15 +14,7 @@ function CustomNavbar() {
         style={{ height: "90px", width: "100%" }}
       >
         <div style={{ padding: "10px" }}>
-          <img
-            src={logoKgp}
-            style={{
-              height: "80%",
-              width: "80%",
-              marginTop: "30%",
-              marginBottom: "30%",
-            }}
-          ></img>
+          <img src={logoKgp} style={{ height: "20%", width: "60%" }}></img>
         </div>
         <Navbar.Brand href="/" style={{ fontSize: "40px" }}>
           INDIAN INSTITUTE OF TECHNOLOGY
@@ -40,10 +32,10 @@ function CustomNavbar() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" navbarScroll>
-            <Nav.Link href="/login" style={{ padding: "2px 30px" }}>
+            <Nav.Link href="/Dashboard" style={{ padding: "2px 30px" }}>
               STUDENTS
             </Nav.Link>
-            <Nav.Link href="/login" style={{ padding: "2px 30px" }}>
+            <Nav.Link href="/Companies" style={{ padding: "2px 30px" }}>
               RECRUITERS
             </Nav.Link>
             <Nav.Link href="/login" style={{ padding: "2px 30px" }}>

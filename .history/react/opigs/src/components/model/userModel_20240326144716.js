@@ -15,10 +15,6 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  Roll: {
-    type: String,
-    required: true,
-  },
 });
 
 userSchema.methods.comparePassword = async function (enteredPassword) {
